@@ -3,13 +3,15 @@
 A playground for the [`Reason`](http://facebook.github.io/reason/) language
 based on [`ReasonProject`](https://github.com/reasonml/ReasonProject).
 
+Features: all of the features of ReasonProject, plus:
+
+- [`BuckleScript`](bucklescript) integration
+
 ## Install
 
-This is the same as for ReasonProject. Summary:
-
 ```sh
-git clone https://github.com/reasonml/ReasonProject.git
-cd ReasonProject
+git clone https://github.com/acchou/ReasonPlayground.git
+cd ReasonPlayground
 npm install
 ```
 
@@ -20,7 +22,14 @@ npm run reasonBuild  # Rebuilds after changing
 npm run start        # Runs the compiled app
 npm run clean        # Clean if you need to!
 npm run top          # REPL (rtop)
+npm run buckleWatch  # Compile to JavaScript using BuckleScript (in watch mode)
 ```
+
+The `reasonBuild` target produces a native executable file `Test.native` in
+the project directory and other build artifacts in `_build`. The `start`
+target runs the native app.
+
+The `buckleWatch` target produces JavaScript output in `lib/js`.
 
 ## Source Code
 

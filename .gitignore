@@ -12,5 +12,5 @@ _build/**
 *.annot
 *.run
 *.opt
-
+lib
 node_modules

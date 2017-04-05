@@ -32,17 +32,19 @@
   "scripts": {
     "postinstall": "npm run reasonBuild",
     "buildHelp": "eval $(dependencyEnv) && nopam && rebuild --help",
-    "reasonBuild": "eval $(dependencyEnv) && nopam && rebuild -use-ocamlfind -cflag -w -cflag -40 -I src ./src/Test.native",
+    "reasonBuild": "eval $(dependencyEnv) && nopam && rebuild -no-hygiene -use-ocamlfind -cflag -w -cflag -40 -I src ./src/Test.native",
     "reasonbuild": "npm run reasonBuild",
+    "buckleWatch": "eval $(dependencyEnv) && ./node_modules/.bin/bsb -w",
     "start": "eval $(dependencyEnv) && ./_build/src/Test.native",
-    "clean": "rm -r ./_build",
+    "clean": "rm -r ./_build ./lib",
     "top": "eval $(dependencyEnv) && rtop",
     "env": "eval $(dependencyEnv) && env",
     "editor": "eval $(dependencyEnv) && eval $EDITOR",
     "whereisocamlmerlin": "eval $(dependencyEnv) && which ocamlmerlin-reason"
   },
   "devDependencies": {
-    "@opam-alpha/merlin": "^ 2.5.0"
+    "@opam-alpha/merlin": "^ 2.5.0",
+    "bs-platform": "^1.6.0"
   },
   "dependencies": {
     "reason": "1.9.0",
